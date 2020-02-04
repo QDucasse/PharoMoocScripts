@@ -168,22 +168,29 @@ TOOLS USED:
 System Browser
 
 CODE USED:
-Object subclass: #Counter
-    instanceVariablesNames: 'count'
-    classVariableNames: ''
-    package: 'MyCounter'
+Counter >> decrement
+   count := count - 1
 
 SCRIPT:
 Maybe it caught your attention on the last videos of this Redo but the Pharo
 System Browser is a live environment What you might have seen as me deleting
 methods and adding methods out of nowhere are actually pretty easy to understand.
 
-If we look at the start of our counter again:
+So let us look at the method decrement.
+We modify the method definition
 
-Object subclass: #Counter
-    instanceVariablesNames: 'count'
-    classVariableNames: ''
-    package: 'MyCounter'
+Counter >> decrement
+   count := count - 2
+
+This changes the method because we did not change the method name.
+
+Now when we want to define a new method how do we do it since there is no button for that.
+Just type the method or modify an existing one. 
+
+Counter >> decrement25
+   count := count - 2
+   
+This creates a new method because the method name is new and not already define in the class.    
 
 The template of a method can be overridden simply by writing over it and saving
 (compiling the new method). The same exact process can be used to create a new
