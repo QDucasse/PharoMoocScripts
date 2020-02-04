@@ -315,12 +315,15 @@ PRINT ON command: "printOn: aStream".
 We can overwrite it as follows:
 Counter >> printOn: aStream
   super printOn: aStream.
-  aStream nextPutAll: ' withValue: ', self count printString.
+  aStream nextPutAll: ' withValue: ', count printString.
   aStream cr
 
 where the super printOn: will print the previously seen aCounter, from which we
 add withValue:, the comma is a string concatenation and we finally add the
 count itself (string form).
+
+We let you define a method for this method. A tip send the message printString to Counter new to get its
+string representation.
 
 We can try to print it again: our counter displays everything now.
 SAVE AND COMMIT
