@@ -244,11 +244,15 @@ Counter class >> startingAt: anInteger
   ^ self new count: anInteger
 
 SCRIPT:
-In this part, we will see how to write useful class methods and how to use and
-test them. The typical use for class methods is to get special instances of the
-class. For example with our counter, we might need a counter initialised at 0.
-While this can be done in another class method, the initialize method will do
-any action along with a "new" call to a class.
+In this part, we will see how to initialize an object correctly. 
+Indeed if we do 
+
+Counter new increment we get an error because count is nil. 
+
+This is our responsibility to provide well initialized object.
+Pharo offers the initialize method to initialize automaticalluy objects at creation time. 
+
+
 Let's first write the test:
 TestCounter >> testValueAtCreationIsZero
 self assert: Counter new count equals: 0
@@ -258,8 +262,23 @@ Counter >> initialize
   super initialize.
   count := 0
 
-Now, to extend our helper, let's create an initialiser that can be chosen. As
-usual, let's write the test we want to verify.
+Now our test passes. 
+
+We can also see that 
+Counter new increment is working but better write a test
+
+TestCounter >> testCounterWellInitialized
+self assert: Counter new increment; increment; count equals: 2
+
+Now sometimes we would like to have a different way to create instances.
+For example we would like to be able to specifying the value at which the counter is starting at.
+For this we will define and use a class metho.
+write useful class methods and how to use and
+ 
+The typical use for class methods is to get special instances of the
+class. 
+For example with our counter, we might need a counter initialised at 0.
+
 TestCounter >> testCounterStartingAt5
 self assert: (Counter startingAt: 5) count equals: 5
 
@@ -267,19 +286,11 @@ And we can now write the method associated with the test:
 Counter class >> startingAt: anInteger
   ^ self new count: anInteger
 
-We can now rewrite the two previous tests with our new helper methods.
-CounterTest >> testIncrement
-| c |
-c := Counter new.
-c increment ; increment.
-self assert: c count equals: 2.
+Now we can write another test showing that everything works together. 
 
-CounterTest >> testDecrement
-| c |
-c := Counter startingAt: 2.
-c decrement ; decrement.
-self assert: c count equals: 0.
-
+TestCounter >> testAlternateCreationMethod
+  self assert: ((Counter startingAt: 19) increment ; count) equals: 20
+  
 Commit with a nice message.
 
 ================================================================================
