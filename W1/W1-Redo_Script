@@ -207,8 +207,10 @@ In order to save our code, we will use Iceberg. This tool is used to provide
 version control over different packages and will handle images and code versions.
 We will not set up a git project but a simple local project.
 We first create a package then from within Iceberg choose the create project
-with local repository. We can now add our package to the repository and commit
-locally.
+with local repository. 
+Press the + icon to create a folder 
+Name it src
+We can now add our package to the repository and commit locally.
 
 
 ================================================================================
