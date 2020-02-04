@@ -88,10 +88,10 @@ c increment ; increment.
 self assert: c count equals: 0.
 ---------------------------------------
 Counter >> increment
-  self count: self count + 1
+   count := count + 1
 ---------------------------------------
 Counter >> decrement
-  self count: self count - 1
+   count := count - 1
 
 SCRIPT:
 Create a new test class.
@@ -109,8 +109,11 @@ c := Counter new.
 c count := 7.
 self assert: c count equals: 7.
 
-Compile the method and the test can be executed by pressing the button. For the
-next test, we will use a test-driven development mindset. We want our counter to
+Compile the method and the test can be executed by pressing the button.
+The test is green. 
+So we can save the image (later we will commit).
+
+For the next test, we will use a test-driven development mindset. We want our counter to
 be able to increment so let's start by writing the corresponding test:
 
 CounterTest >> testIncrement
@@ -120,6 +123,20 @@ c count := 0.
 c increment ; increment.
 self assert: c count equals: 2.
 
+Execute the test.
+It is red this is good!
+The test is not working for now as we have not defined the increment method.
+
+Define Protocol operation
+Define the method 
+
+Counter >> increment
+   count := count + 1
+
+Execute the test.
+It is green this is good!
+Save the image
+
 CounterTest >> testDecrement
 | c |
 c := Counter new.
@@ -127,14 +144,17 @@ c count := 2.
 c increment ; increment.
 self assert: c count equals: 0.
 
-The test is not working for now as we have not defined the increment method.
-Protocol operation, method
+Execute the test.
+It is red this is good!
 
-Counter >> increment
-  self count: self count + 1
+Define the method 
 
 Counter >> decrement
-  self count: self count - 1
+   count := count - 1
+  
+Execute the test.
+It is green this is good!
+Save the image
 
 We can see that the tests for the methods increment and decrement are
 automatically detected. We can execute them by pushing the button, they are now
