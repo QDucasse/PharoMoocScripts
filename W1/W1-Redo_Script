@@ -219,6 +219,7 @@ Press the + icon to create a folder
 Name it src
 We can now add our package to the repository and commit locally.
 
+ToQ: once you are done with it we will update the pdf.
 
 ================================================================================
 PART 5: Class methods, initialisation and tests
