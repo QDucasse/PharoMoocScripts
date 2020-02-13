@@ -110,7 +110,7 @@ c count := 7.
 self assert: c count equals: 7.
 
 Compile the method and the test can be executed by pressing the button.
-The test is green. 
+The test is green.
 So we can save the image (later we will commit).
 
 For the next test, we will use a test-driven development mindset. We want our counter to
@@ -128,7 +128,7 @@ It is red this is good!
 The test is not working for now as we have not defined the increment method.
 
 Define Protocol operation
-Define the method 
+Define the method
 
 Counter >> increment
    count := count + 1
@@ -147,11 +147,11 @@ self assert: c count equals: 0.
 Execute the test.
 It is red this is good!
 
-Define the method 
+Define the method
 
 Counter >> decrement
    count := count - 1
-  
+
 Execute the test.
 It is green this is good!
 Save the image
@@ -169,7 +169,10 @@ System Browser
 
 CODE USED:
 Counter >> decrement
-   count := count - 1
+   count := count - 2
+
+ Counter >> decrement25
+    count := count - 2
 
 SCRIPT:
 Maybe it caught your attention on the last videos of this Redo but the Pharo
@@ -184,13 +187,15 @@ Counter >> decrement
 
 This changes the method because we did not change the method name.
 
-Now when we want to define a new method how do we do it since there is no button for that.
-Just type the method or modify an existing one. 
+Now when we want to define a new method how do we do it since there is no button
+for that?
+Just type the method or modify an existing one.
 
 Counter >> decrement25
    count := count - 2
-   
-This creates a new method because the method name is new and not already define in the class.    
+
+This creates a new method because the method name is new and has not been defined
+in the class.
 
 The template of a method can be overridden simply by writing over it and saving
 (compiling the new method). The same exact process can be used to create a new
@@ -214,9 +219,8 @@ In order to save our code, we will use Iceberg. This tool is used to provide
 version control over different packages and will handle images and code versions.
 We will not set up a git project but a simple local project.
 We first create a package then from within Iceberg choose the create project
-with local repository. 
-Press the + icon to create a folder 
-Name it src
+with local repository.
+Press the + icon to create a. Name it src.
 We can now add our package to the repository and commit locally.
 
 ToQ: once you are done with it we will update the pdf.
@@ -244,13 +248,13 @@ Counter class >> startingAt: anInteger
   ^ self new count: anInteger
 
 SCRIPT:
-In this part, we will see how to initialize an object correctly. 
-Indeed if we do 
+In this part, we will see how to initialize an object correctly.
+Indeed if we do
 
-Counter new increment we get an error because count is nil. 
+Counter new increment we get an error because count is nil.
 
 This is our responsibility to provide well initialized object.
-Pharo offers the initialize method to initialize automaticalluy objects at creation time. 
+Pharo offers the initialize method to initialize automaticalluy objects at creation time.
 
 
 Let's first write the test:
@@ -262,9 +266,9 @@ Counter >> initialize
   super initialize.
   count := 0
 
-Now our test passes. 
+Now our test passes.
 
-We can also see that 
+We can also see that
 Counter new increment is working but better write a test
 
 TestCounter >> testCounterWellInitialized
@@ -274,9 +278,9 @@ Now sometimes we would like to have a different way to create instances.
 For example we would like to be able to specifying the value at which the counter is starting at.
 For this we will define and use a class metho.
 write useful class methods and how to use and
- 
+
 The typical use for class methods is to get special instances of the
-class. 
+class.
 For example with our counter, we might need a counter initialised at 0.
 
 TestCounter >> testCounterStartingAt5
@@ -286,11 +290,11 @@ And we can now write the method associated with the test:
 Counter class >> startingAt: anInteger
   ^ self new count: anInteger
 
-Now we can write another test showing that everything works together. 
+Now we can write another test showing that everything works together.
 
 TestCounter >> testAlternateCreationMethod
   self assert: ((Counter startingAt: 19) increment ; count) equals: 20
-  
+
 Commit with a nice message.
 
 ================================================================================
