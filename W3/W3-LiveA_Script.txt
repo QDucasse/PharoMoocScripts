@@ -1,0 +1,18 @@
+TOOLS USED:
+System Browser
+
+CODE USED:
+/
+
+SCRIPT:
+In order to explore the different possibilities of the System Browser, let's
+look at the following important features: Show senders, show implementors.
+
+Message with the same name is called somewhere in the system but we have no idea
+if it is applied on the same object than the one we inspected. The implementors
+of will show all the methods in the system that have the same name as the one
+inspected.
+
+Senders allow to show examples of the given method.
+
+Shortcuts cmd-B(rowse)-(se)N(ders) and cmd-B(rowse)-(i)M(plementors)

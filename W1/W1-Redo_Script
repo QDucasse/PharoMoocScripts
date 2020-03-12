@@ -281,7 +281,7 @@ write useful class methods and how to use and
 
 The typical use for class methods is to get special instances of the
 class.
-For example with our counter, we might need a counter initialised at 0.
+For example with our counter, we might need a counter initialised at 5.
 
 TestCounter >> testCounterStartingAt5
 self assert: (Counter startingAt: 5) count equals: 5
@@ -308,6 +308,11 @@ Iceberg
 
 CODE USED:
 Counter new.
+
+Counter >> printOn: aStream
+  super printOn: aStream.
+  aStream nextPutAll: ' withValue: ', count printString.
+  aStream cr
 
 SCRIPT:
 Our Counter can be printed on the Playground using the PRINT ON command. What is
