@@ -1,0 +1,80 @@
+TOOLS USED:
+
+
+CODE USED:
+
+Smalltalk globals
+
+self at: #Point
+
+SCRIPT:
+
+In this video we will look at how we can use the Inspector to navigate inside
+the system and understand pieces of it.
+
+The inspector works as a microscope to explore through the system. We can modify
+pieces of it and see how they react to change.
+
+[[[Playground
+Smalltalk globals
+]]]
+
+We will look at the Smalltalk globals, the space where all the classes are kept.
+It is a dictionary that you can explore within the Inspector
+
+RAW >> BREAKPOINT
+
+You can see it is a big array with explanations for all the classes. When
+looking at the class Breakpoint, you can see it is a global variable in the
+side panel.
+
+We can see it is composed of a key and value. Clicking on it brings
+us to a ByteSymbol, #Breakpoint. The associated value is the actual Breakpoint
+class.
+
+KEY > METHOD DICT
+
+It helps you navigate through the class tree and restrict the flow with the
+points below.
+
+A nice thing to know is that you can add a new branch to the exploration flow.
+For example, if we go back to the beginning,
+
+[[[
+self at: #Point
+]]]
+DO IT AND GO
+
+You just plugged a piece of code to the navigation. We now have an Inspector on
+the class "Point". This inspection will bring out the tabs related to classes.
+"RAW" will show you the Pharo implementation,
+"DEFINITION" brings out the way it is defined,
+"COMMENT" shows the comment,
+"REFERENCES" presents all the differences associated, (Point used in @)
+
+Going back to the "RAW" tab and looking at the method dictionary, you can see
+a dictionary holding keys being the names of the methods and values the
+compiled methods. The "RAW" tab now shows how the dictionary method. We would
+rather see what the methods are and this can be seen in the "ITEMS" tab and
+clicking on one of them.
+
+For example, "degrees" will output a CompiledMethod that can be seen differently
+by the Inspector. We can see that the CompiledMethod consists of an array of
+bytecode and literals. The literals are all the names contained in the body of
+the method. In the beginning of the CompiledMethod, you can see all the different
+literals. The bytecode can reference those literals in the execution.
+
+Looking at the "BYTECODE" tab, you can see the instructions and their literals.
+Instructions such as pushing literals on the execution stack, sending messages
+etc.
+
+Duplicating the view with one tab on BYTECODE and one on SOURCE will help you
+see what the source code expressions translate into. This view is extremely
+handy for the people developing the compiler.
+
+Another combo that is handy is the AST and SOURCE. Clicking on elements of the
+tree will highlight the counterpart piece of source code.
+
+This tool and approach can be used by developers of the compiler. Even for your
+objects, you can extend the inspector to display interesting information about
+your object and its behaviour.

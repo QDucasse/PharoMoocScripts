@@ -1,0 +1,24 @@
+TOOLS USED:
+Iceberg
+
+CODE USED:
+/
+
+SCRIPT:
+In this video we will look at how we can set up a repository on Github from the
+Iceberg tool.
+
+PRECONDITIONS:
+- You can push a repository on Github
+
+Repository creation on Github.
+
+SSH the Repository
+
+Monticello Integration
+
+
+
+
+Finally, we can add the remote in Pharo and commit to it. We can see back on
+Github that our project is updated and can be looked into.

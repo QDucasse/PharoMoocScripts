@@ -1,0 +1,26 @@
+TOOLS USED:
+Spotter
+
+CODE USED:
+examples
+examples #prag
+--> gtExample
+------> Morph
+
+SCRIPT:
+This video will show you how to restrict the search space using the Spotter
+tool.
+
+Looking for examples, you can type examples. Now if you know there is a pragma
+in your example or that the methods you are looking for have a pragma tag, you
+can use #prag.
+
+Clicking on the grey arrow on the right side of the Spotter window, you can
+explore all the methods that fit the research.
+
+Using gtExample, press the blue arrow (dive in) to look into all the methods
+that are named or contain "gtExample". Diving in again in the Pragmas category
+will display all the methods that contain the gtExample pragma. From this point,
+let's ask the Spotter only to display methods from morphs. You can see either
+methods from the class Morph or methods that contain morph in their name and
+that still answer all the above restrictions.
