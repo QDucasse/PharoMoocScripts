@@ -75,6 +75,9 @@ handy for the people developing the compiler.
 Another combo that is handy is the AST and SOURCE. Clicking on elements of the
 tree will highlight the counterpart piece of source code.
 
-This tool and approach can be used by developers of the compiler. Even for your
-objects, you can extend the inspector to display interesting information about
+This tool and approach can be used by developers of the compiler. 
+Even for your objects, you can extend the inspector to display interesting information about
 your object and its behaviour.
+
+What this video illustrates is that by adapting Pharo tools you can get really fast dedicated tools for 
+your domain and this is a clear productivity boost.
