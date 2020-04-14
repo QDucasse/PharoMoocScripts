@@ -17,8 +17,11 @@ SSH the Repository
 
 Monticello Integration
 
+Open Iceberg
+
+Add from github
 
 
-
+I do not think that we need the following. 
 Finally, we can add the remote in Pharo and commit to it. We can see back on
 Github that our project is updated and can be looked into.
