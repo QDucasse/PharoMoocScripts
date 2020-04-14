@@ -39,6 +39,6 @@ Critics, this will create a manifest that can be versioned. When running the
 code critic again later on, the manifest will be taken in consideration and the
 false positives will be avoided.
 
-What is extremely important is that those quality rules will be integrated in
+In the future those quality rules will be integrated in
 the continuous development process. For example, a Jenkins server will run the
 rules and the manifest automatically.
