@@ -5,7 +5,7 @@ CODE USED:
 
 SCRIPT:
 In this video we will look at how we can use refactoring in Pharo. Historically,
-refactoring has been implemented in the ancestor of Pharo and then deployed
+refactorings have been implemented in the ancestor of Pharo and then deployed
 to other mainstream languages. Since 1995, Smalltalk already had a refactoring
 tool. The tool we will look at right now is inspired from the previous tool .
 
