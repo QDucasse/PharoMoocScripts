@@ -2,55 +2,49 @@ TOOLS USED:
 System Browser
 Debugger
 
-
 CODE USED:
-| c |
-c := Counter new.
-c count: 7.
-c decrement ; decrement.
 
 SCRIPT:
-MyCounter already loaded
 
-The counter tests are up and running. Let's look at how we can use the debugger
-to execute an expression step by step. Let's look at testDecrement and click on
-"Debug Test".
+In this video and as an extension to the last one, we will look at how we can
+identify a bug.
 
-The debugger opens showing the execution stack with a whole lot of messages. The
-first ones are system related and handled by Pharo but looking into the
-"testDecrement".
+Change the definition of decrement to
+[[[
+Counter >> decrement
+  count := count + 1
+]]]
 
-The window below displays the body of the method highlighted on the stack. The
-window at the bottom displays the values of the different variables contained
-in the environment.
+Running the tests again will show that "testDecrement" is failing. The debugger
+can open and be inspected. You can see that count is not equal to the expected
+result.
 
-Pressing over will execute the current expression and bring you to the next one
-to be evaluated. The central window can still work as a work environment,
-printing the "Counter new" expression will display an instance of the class
-"Counter".
-
-Arriving on the affectation and pressing over will give an actual value to the
-variable "c". The variable can be inspected as well, we can see that the value
-of the instance variable is still the default one. Now, if you want to look at
-how the "count:" method is implemented, you can press into and dive inside the
-method itself.
-
-Once again, this is still a working environment, you can print and look into
-the variables displayed to check their behaviour. Pressing over again will
-bring you back to the starting point and resume the debugging process.
-
-You can do the same thing with the "decrement" method.
-
-Proceed will stop the debugging process and carry on until completion or an
-error.
-
-A final thing to know is that you can debug anything, even if not defined into
-a method. Using the same piece of code in a Playground can still enable the
-debugger.
+Now the state of the debugger we are in is too advanced. We would like to look
+at the execution of the expressions before the erroneous one. In order to do
+so, you can use the expression
 
 [[[
-| c |
-c := Counter new.
-c count: 7.
-c decrement ; decrement.
+self halt.
 ]]]
+
+right after the creation of the counter.
+
+Running the test again will open the debugger not on the result but on the halt
+instruction we just wrote. From now, we can explore the execution pile looking
+for our bug.
+
+OVER and INTO to look where the behaviour is incorrect.
+
+OVER -> INTO count:
+OVER -> INTO decrement  ---> CORRECTION IN THE DEBUGGER
+PROCEED
+
+Halt is still there.
+DEBUG --> REMOVE THE EXPRESSION
+PROCEED
+
+The test is now green!
+
+This video taught you how to place debug code in a piece of code that has a
+suspicious behaviour and how to inspect the execution stack around the
+target methods.

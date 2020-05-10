@@ -1,24 +1,21 @@
 TOOLS USED:
+Iceberg
 
 CODE USED:
-
-Metacello new
-    baseline: 'ContainersStack';
-    repository: 'github://Ducasse/Containers-Stack/src';
-    load.
+/
 
 SCRIPT:
-
-In Pharo, we can load projects using Metacello. This can be done by executing
-the following piece of code:
-
-Metacello new
-    baseline: 'ContainersStack';
-    repository: 'github://Ducasse/Containers-Stack/src';
-    load.
-
-The project we would like to load is hosted on Github under
-github://Ducasse/Containers-Stack/src
+In this video we will look at how we can set up the Counter package on Github from the
+Iceberg tool.
 
 
-Next, we can see the baseline of the project in Iceberg.
+- First create the repository on Github.
+
+- Go over the locally created Icerberg repository and click on Add remote
+
+- Add the corresponding remote, you might have to log in into git since we use
+https
+
+- press Push and look over the commits
+
+- Go back on Github to see your updated package
