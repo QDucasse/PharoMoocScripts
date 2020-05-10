@@ -24,3 +24,7 @@ will display all the methods that contain the gtExample pragma. From this point,
 let's ask the Spotter only to display methods from morphs. You can see either
 methods from the class Morph or methods that contain morph in their name and
 that still answer all the above restrictions.
+
+--> ADD W3 LIVE D
+        W5 LIVE B
+        W7 LIVE B

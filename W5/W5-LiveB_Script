@@ -13,3 +13,5 @@ can look into the file if it provides a displayable content.
 You can also visit directories using ./ #dir and inspect their contents. For
 example, a png will be displayed on the side panel. You can even navigate
 inside a zip file to see its contents.
+
+--> Move to W5-LiveA

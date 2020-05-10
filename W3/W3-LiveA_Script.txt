@@ -7,10 +7,13 @@ CODE USED:
 SCRIPT:
 To explore the different possibilities of the System Browser, let's
 look at the following important features: Show senders, show implementors.
-Understanding how to use senders and implementors is important because it greatly helps navigating and discovering how some parts of the system works. 
+Understanding how to use senders and implementors is important because it greatly
+helps navigating and discovering how some parts of the system works.
 Note that such practice is true in any OO languages.
 
-Imagine that we have a message, a message with the same name is called somewhere in the system but we have no idea if it is applied on the same object than the one we inspected. 
+Imagine that we have a message, a message with the same name is called somewhere
+in the system but we have no idea if it is applied on the same object than the
+one we inspected.
 
 The implementors of will show all the methods in the system that have the same name as the one
 inspected.
